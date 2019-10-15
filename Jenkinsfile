@@ -28,6 +28,7 @@ pipeline {
         beforeAgent true
         branch 'master'
       }
+      publishEvent simpleEvent('hello-api-deploy-event')
       steps {
         copyArtifacts projectName: '../helloworld-api/development'
         gateConsumesArtifact file: 'application.sh'
